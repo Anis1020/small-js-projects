@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="display: flex; gap: 10px">
+      <div id="card_container">
+        <div
+          style="
+            background-color: aquamarine;
+            padding: 10px;
+            width: 400px;
+            text-align: center;
+            margin: 10px 0px;
+          "
+        >
+          <h1>Chocolate</h1>
+          <p>Price <span id="chocolate_price">50</span></p>
+          <input type="text" id="chocolate_field" placeholder="quantity" />
+          <button class="add_chocolate">Add Item</button>
+        </div>
+        <div
+          style="
+            background-color: aquamarine;
+            padding: 10px;
+            width: 400px;
+            text-align: center;
+            margin: 10px 0px;
+          "
+        >
+          <h1>Rose</h1>
+          <p>Price <span id="rose_price">50</span></p>
+          <input type="text" id="rose_field" placeholder="quantity" />
+          <button class="add_rose">Add Item</button>
+        </div>
+        <div
+          style="
+            background-color: aquamarine;
+            padding: 10px;
+            width: 400px;
+            text-align: center;
+            margin: 10px 0px;
+          "
+        >
+          <h1>Diary</h1>
+          <p>Price <span id="diary_price">50</span></p>
+          <input type="text" id="diary_field" placeholder="quantity" />
+          <button class="add_diary">Add Item</button>
+        </div>
+      </div>
+      <div
+        id="cart_details"
+        style="
+          width: 350px;
+          background-color: aqua;
+          text-align: center;
+          padding: 20px;
+        "
+      >
+        <h3>Chocolate <span id="chocolate">00</span></h3>
+        <hr />
+        <h3>Rose: <span id="rose">00</span></h3>
+        <hr />
+        <h3>Diary: <span id="diary">00</span></h3>
+        <hr />
+        <h3>Total: <span id="total">00</span></h3>
+        <h4>Use Promo Code</h4>
+        <hr />
+        <input type="text" id="cupon" placeholder="20" />
+        <button id="apply">Apply</button>
+        <h1>Total Cost <span id="allCost">00</span></h1>
+      </div>
+    </div>
+    <!-- <div id="div-container"></div>
+    <h1 id="change"></h1> -->
+    <script src="bugetTraack.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
