@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+
+    <!-- daisy ui link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navbar bg-base-100 shadow-md">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><a>Item 1</a></li>
+                <li>
+                  <a>Parent</a>
+                  <ul class="p-2">
+                    <li><a>Submenu 1</a></li>
+                    <li><a>Submenu 2</a></li>
+                  </ul>
+                </li>
+                <li><a>Item 3</a></li>
+              </ul>
+            </div>
+            <a class="btn btn-ghost text-xl">daisyUI</a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+              <li><a>Item 1</a></li>
+              <li>
+                <details>
+                  <summary>Parent</summary>
+                  <ul class="p-2">
+                    <li><a>Submenu 1</a></li>
+                    <li><a>Submenu 2</a></li>
+                  </ul>
+                </details>
+              </li>
+              <li><a>Item 3</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <a class="btn">Button</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- cart section -->
+      //flex-col
+      <div class="px-6 flex gap-3 flex-row-reverse md:flex-row my-10">
+        <div
+          id="allCart"
+          class="lg:w-[70%] gap-3 grid md:grid-cols-2 lg:grid-cols-3 mx-auto"
+        >
+          <div class="card w-full bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="first_title" class="card-title">Shoes!</h2>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing.?</p>
+              <p>Price: <span class="first_price">50</span></p>
+              <p>Quantity: <span class="first_quantity">3</span></p>
+              <div class="card-actions">
+                <button id="first_btn" class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="card w-full bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="second-title">second title</h2>
+              <p>If a dog chews shoes whose shoes ?</p>
+              <h2>Shoes! <span class="second-price">200</span></h2>
+              <p>
+                Quantity:
+                <span class="second-quantity">40</span>
+              </p>
+              <div class="card-actions">
+                <button id="secondBtn" class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+          <div class="card w-full bg-base-100 shadow-xl">
+            <figure class="px-10 pt-10">
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+                class="rounded-xl"
+              />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="third-title">third title</h2>
+              <p>If a dog chews shoes whose shoes ?</p>
+              <input
+                class="border p-2 rounded"
+                type="text"
+                placeholder="Price "
+                id="price_field"
+              />
+              <!-- <h2>Shoes! <span class="second-price">200</span></h2> -->
+              <input
+                class="border p-2 rounded"
+                type="text"
+                placeholder="Quantity"
+                id="quantity_field"
+              />
+              <!-- <p>
+                Quantity:
+                <span class="second-quantity">40</span>
+              </p> -->
+              <div class="card-actions">
+                <button id="third" class="btn btn-primary">Buy Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="cartDetails" class="w-full md:w-[30%] lg:w-[25%] mx-auto">
+          <div class=" ">
+            <table class="table table-zebra">
+              <!-- head -->
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="tbody">
+                <!-- row 1 -->
+                <!-- <tr>
+                  <th>1</th>
+                  <td>Quality Control</td>
+                  <td>Quality Control</td>
+                  <td>Blue</td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+          <h1 class="text-2xl text-end">
+            Sub Total: <span id="subtotal">00</span>
+          </h1>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="index.js"></script>
+  </body>
+</html>
