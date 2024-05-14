@@ -1,15 +1,13 @@
 let count = 0;
 let allTotal = 0;
-document.getElementById("subtotal").innerText = allTotal;
+
 document.getElementById("first_btn").addEventListener("click", function () {
   count += 1;
   getTextValue(".first_title", ".first_price", ".first_quantity");
-  // allTotal = allTotal + total;
-  // console.log(result);
 });
+
 document.getElementById("secondBtn").addEventListener("click", function () {
   count += 1;
-
   getTextValue(".second-title", ".second-price", ".second-quantity");
 });
 
@@ -19,6 +17,7 @@ document.getElementById("third").addEventListener("click", function () {
   const productPrice = document.querySelector("#price_field").value;
   const productQuantity = document.querySelector("#quantity_field").value;
   const total = parseInt(productPrice) - parseInt(productQuantity);
+
   console.log(total);
 
   // show data in display
@@ -36,6 +35,7 @@ const getTextValue = (id1, id2, id3) => {
 };
 // common function show data in
 const displayData = (productTitle, productPrice, productQuantity, total) => {
+  allTotal = allTotal + total;
   const tBody = document.getElementById("tbody");
   const tr = document.createElement("tr");
   tr.innerHTML = `
@@ -46,5 +46,6 @@ const displayData = (productTitle, productPrice, productQuantity, total) => {
 <td>${total}</td>
 `;
   tBody.appendChild(tr);
+  document.getElementById("subtotal").innerText = allTotal;
   // console.log(tr.parentNode.removeChild(e.target.value));
 };
